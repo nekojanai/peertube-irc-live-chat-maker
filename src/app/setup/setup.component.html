@@ -1,0 +1,20 @@
+<form [formGroup]="setupForm" (ngSubmit)="onSubmit()">
+  <label>
+    Peertube Live Link*
+    <input type="text" formControlName="peertubeLiveLink">
+  </label><br>
+  <label>
+    IRC server host*
+    <input type="text" formControlName="ircServerHost">
+  </label><br>
+  <label>
+    IRC channel name*
+    <input type="text" formControlName="ircChannelName">
+  </label><br>
+  <button [disabled]="!setupForm.valid" type="submit">generate live chat page</button>
+</form><br>
+<label>
+  Peertube with chat link
+  <input type="text" readonly #output>
+</label>
+<button (click)="copy()">copy</button>
